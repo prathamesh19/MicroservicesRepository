@@ -24,5 +24,16 @@ public interface VendorRestConsumer {
 	@GetMapping("/vendor/list")
 	public ResponseEntity<List<Vendor>> showMsgD();
 	
+	@PostMapping("/vendor/create")
+	public ResponseEntity<String> saveVendor(
+			@RequestBody Vendor vendor);
+	
+	@DeleteMapping("/vendor/remove/{id}")
+	public String removeVendor(
+			@PathVariable Integer id);
+	
+	@PutMapping("/vendor/modified")
+	public ResponseEntity<String> updateVendor(
+			@RequestBody Vendor vendor);
 	
 }
