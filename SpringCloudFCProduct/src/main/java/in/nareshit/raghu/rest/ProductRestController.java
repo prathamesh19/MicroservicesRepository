@@ -45,4 +45,31 @@ public class ProductRestController {
 		return "FROM PROD=>" + resp.getBody();
 	}
 	
+	@PostMapping("/datae")
+	public String createVendor(
+			@RequestBody Vendor vendor
+			) 
+	{
+		//Vendor vendor = new Vendor(552, "NIT", "HYD");
+		String resp = consumer.saveVendor(vendor).getBody();
+		return "FROM PRODUCT => " + resp;
+	}
+	
+	@DeleteMapping("/delete/{id}")
+	public String removeById(
+			@PathVariable Integer id
+			)
+	{
+		String resp = consumer.removeVendor(id);
+		return "FROM PROD=>" + resp;
+	}
+	
+	@PutMapping("/update")
+	public String modifyData(
+			@RequestBody Vendor vendor) 
+	{
+		//Vendor vendor = new Vendor(552, "NIT", "HYD");
+		String body = consumer.updateVendor(vendor).getBody();
+		return "FROM PROD=>" + body;
+	}
 }
