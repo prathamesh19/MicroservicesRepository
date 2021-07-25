@@ -46,4 +46,28 @@ public class VendorRestController {
 				);
 	}
 	
+	@PostMapping("/create")
+	public ResponseEntity<String> saveVendor(
+			@RequestBody Vendor vendor
+			) 
+	{
+		String body = "Data is =>" + vendor;
+		System.out.println(body);
+		return ResponseEntity.ok(body);
+	}
+	
+	@DeleteMapping("/remove/{id}")
+	public String removeVendor(
+			@PathVariable Integer id) 
+	{
+		return "Deleted Successfully=>"+id;
+	}
+	
+	@PutMapping("/modified")
+	public ResponseEntity<String> updateVendor(
+			@RequestBody Vendor vendor
+			) 
+	{
+		return ResponseEntity.ok("Updated!" +vendor);
+	}
 }
