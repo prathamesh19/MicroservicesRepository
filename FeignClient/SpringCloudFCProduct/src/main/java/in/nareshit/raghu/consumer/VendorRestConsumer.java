@@ -31,6 +31,17 @@ public interface VendorRestConsumer {
 	@PostMapping("/vendor/create")
 	public ResponseEntity<String> saveVendor(
 			@RequestBody Vendor vendor);
+<<<<<<< HEAD:FeignClient/SpringCloudFCProduct/src/main/java/in/nareshit/raghu/consumer/VendorRestConsumer.java
+=======
+	
+	@DeleteMapping("/vendor/remove/{id}")
+	public String removeVendor(
+			@PathVariable Integer id);
+	
+	@PutMapping("/vendor/modified")
+	public ResponseEntity<String> updateVendor(
+			@RequestBody Vendor vendor);
+>>>>>>> 3e3c0db0e4de295781cccd89e8155703ade31e2f:SpringCloudFCProduct/src/main/java/in/nareshit/raghu/consumer/VendorRestConsumer.java
 	
 	@DeleteMapping("/vendor/remove/{id}")
 	public String removeVendor(
